@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>calculator</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+<div id="calc">
+	<input type="text" id="res"/>
+    	<div class="row">
+        	<div class="col4"><button>CE</button></div>
+        	<div class="col4"><button onClick="clearAll()">C</button></div>
+            <div class="col4"><button>%</button></div>
+            <div class="col4"><button onClick="getValue('+')">+</button></div>
+            <div class="clear"></div>
+            </div>
+            
+         <div class="row">
+        	<div class="col4"><button onClick="getValue(7)">7</button></div>
+        	<div class="col4"><button onClick="getValue(8)">8</button></div>
+            <div class="col4"><button onClick="getValue(9)">9</button></div>
+            <div class="col4"><button onClick="getValue('-')">-</button></div>
+            <div class="clear"></div>
+         </div>
+         
+	<div class="row">
+		<div class="col4"><button onClick="getValue(4)">4</button></div>
+		<div class="col4"><button onClick="getValue(5)">5</button></div>
+		<div class="col4"><button onClick="getValue(6)">6</button></div>
+		<div class="col4"><button onClick="getValue('*')">x</button></div>
+		
+		<div class="clear"></div>
+	</div>
+	<div class="row">
+		<div class="col4"><button onClick="getValue(1)">1</button></div>
+		<div class="col4"><button onClick="getValue(2)">2</button></div>
+		<div class="col4"><button onClick="getValue(3)">3</button></div>
+		<div class="col4"><button onClick="getValue('/')">/</button></div>
+		
+		<div class="clear"></div>
+	</div>
+	<div class="row">
+		<div class="col4"><button onClick="getValue(0)">0</button></div>
+		<div class="col4"><button onClick="getValue('.')">.</button></div>
+		<div class="col4"><button>,</button></div>
+		<div class="col4"><button onClick="getResult()">=</button></div>
+		
+		<div class="clear"></div>
+        
+<script>
+	function getValue(num) {
+		document.getElementById('res').value += num;
+	}
+	function getResult(){
+		var expr = document.getElementById('res').value;
+		document.getElementById('res').value = eval(expr);
+	}
+	function clearAll(){
+		document.getElementById('res').value = '';
+	}
+</script>
+</div>
+</body>
+</html>
